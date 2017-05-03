@@ -28,6 +28,7 @@ dependencies {
     compile rootProject.ext.dependencies["support-v7"]
     compile rootProject.ext.dependencies["design"]
     compile rootProject.ext.dependencies["cardview"]
+    compile rootProject.ext.dependencies["vector-drawable"]
 
     compile rootProject.ext.dependencies["retrofit2"]
     compile rootProject.ext.dependencies["retrofit2-gson"]

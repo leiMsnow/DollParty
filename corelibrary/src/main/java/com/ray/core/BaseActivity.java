@@ -42,8 +42,6 @@ public abstract class BaseActivity extends AppCompatActivity {
         // 设置竖屏
         if (setOrientationPortrait()) {
             setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
-        } else {
-            setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
         }
         setContentView(getLayoutRes());
         ButterKnife.bind(this);
