@@ -2,6 +2,7 @@ package com.doll.party.app.ui;
 
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
+import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentPagerAdapter;
@@ -27,6 +28,8 @@ public class MainActivity extends BaseAppActivity {
     NavigationView mNavigationView;
     @Bind(R.id.drawer_layout)
     DrawerLayout mDrawerLayout;
+    @Bind(R.id.fabtn_create)
+    FloatingActionButton fabtnCreate;
 
     private SparseArray<Fragment> mFragments = new SparseArray<>();
     private MenuItem mPrevMenuItem;
@@ -40,10 +43,8 @@ public class MainActivity extends BaseAppActivity {
     protected void initData() {
         initFragment();
         initDrawerLayout();
-
+        initViewPager();
         mBottomNavigationView.setOnNavigationItemSelectedListener(mOnBottomNavigationItemSelectedListener);
-        mViewPager.setAdapter(mFragmentPagerAdapter);
-        mViewPager.addOnPageChangeListener(mOnPageChangeListener);
     }
 
     private void initDrawerLayout() {
@@ -55,42 +56,42 @@ public class MainActivity extends BaseAppActivity {
         mNavigationView.setNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
     }
 
-    private FragmentPagerAdapter mFragmentPagerAdapter
-            = new FragmentPagerAdapter(getSupportFragmentManager()) {
-        @Override
-        public Fragment getItem(int position) {
-            return mFragments.valueAt(position);
-        }
-
-        @Override
-        public int getCount() {
-            return mFragments.size();
-        }
-    };
-
-    private ViewPager.OnPageChangeListener mOnPageChangeListener
-            = new ViewPager.OnPageChangeListener() {
-        @Override
-        public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-        }
-
-        @Override
-        public void onPageSelected(int position) {
-            invalidateOptionsMenu();
-            if (mPrevMenuItem == null) {
-                mBottomNavigationView.getMenu().getItem(0).setChecked(false);
-            } else {
-                mPrevMenuItem.setChecked(false);
+    private void initViewPager() {
+        mViewPager.setAdapter(new FragmentPagerAdapter(getSupportFragmentManager()) {
+            @Override
+            public Fragment getItem(int position) {
+                return mFragments.valueAt(position);
             }
-            mPrevMenuItem = mBottomNavigationView.getMenu().getItem(position);
-            mPrevMenuItem.setChecked(true);
-        }
 
-        @Override
-        public void onPageScrollStateChanged(int state) {
+            @Override
+            public int getCount() {
+                return mFragments.size();
+            }
+        });
 
-        }
-    };
+        mViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+                invalidateOptionsMenu();
+                if (mPrevMenuItem == null) {
+                    mBottomNavigationView.getMenu().getItem(0).setChecked(false);
+                } else {
+                    mPrevMenuItem.setChecked(false);
+                }
+                mPrevMenuItem = mBottomNavigationView.getMenu().getItem(position);
+                mPrevMenuItem.setChecked(true);
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
+            }
+        });
+    }
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnBottomNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -105,8 +106,7 @@ public class MainActivity extends BaseAppActivity {
             = new NavigationView.OnNavigationItemSelectedListener() {
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-
-//            mDrawerLayout.closeDrawer(GravityCompat.START);
+            mDrawerLayout.closeDrawer(GravityCompat.START);
             return true;
         }
     };
@@ -125,5 +125,4 @@ public class MainActivity extends BaseAppActivity {
         mFragments.put(R.id.navigation_discovery, DiscoveryFragment.newInstance());
         mFragments.put(R.id.navigation_my, MyFragment.newInstance());
     }
-
 }
