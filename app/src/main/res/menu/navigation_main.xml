@@ -15,7 +15,7 @@
 
     <item
         android:id="@+id/navigation_my"
-        android:icon="@drawable/ic_my_black_24dp"
+        android:icon="@drawable/ic_person_black_24dp"
         android:orderInCategory="2"
         android:title="@string/title_my"/>
 

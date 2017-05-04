@@ -30,12 +30,12 @@
             android:id="@+id/fabtn_create"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_above="@+id/navigation"
             android:layout_alignParentRight="true"
             android:layout_marginBottom="16dp"
             android:layout_marginRight="16dp"
-            android:layout_above="@+id/navigation"
-            app:srcCompat="@drawable/ic_add_white_24dp"
-            app:fabSize="normal"/>
+            app:fabSize="normal"
+            app:srcCompat="@drawable/ic_add_white_24dp"/>
 
     </RelativeLayout>
 
@@ -46,7 +46,8 @@
         android:layout_gravity="start"
         android:fitsSystemWindows="true"
         app:headerLayout="@layout/nav_header_drawer_layout"
-        app:itemTextColor="@color/main_black"
+        app:itemIconTint="@drawable/nav_menu_text_color"
+        app:itemTextColor="@drawable/nav_menu_text_color"
         app:menu="@menu/navigation_side"/>
 
 

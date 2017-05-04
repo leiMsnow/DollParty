@@ -29,28 +29,20 @@ dependencies {
     compile rootProject.ext.dependencies["design"]
     compile rootProject.ext.dependencies["cardview"]
     compile rootProject.ext.dependencies["vector-drawable"]
-
-//    compile rootProject.ext.dependencies["retrofit2"]
-//    compile rootProject.ext.dependencies["retrofit2-gson"]
-//    compile rootProject.ext.dependencies["retrofit2-rxjava"]
-//    compile 'com.squareup.okhttp3:logging-interceptor:3.4.1'
-//    compile 'io.reactivex:rxjava:1.1.0'
-//    compile 'io.reactivex:rxandroid:1.1.0'
-
+    //    compile rootProject.ext.dependencies["retrofit2"]
+    //    compile rootProject.ext.dependencies["retrofit2-gson"]
+    //    compile rootProject.ext.dependencies["retrofit2-rxjava"]
+    //    compile 'com.squareup.okhttp3:logging-interceptor:3.4.1'
+    //    compile 'io.reactivex:rxjava:1.1.0'
+    //    compile 'io.reactivex:rxandroid:1.1.0'
     compile 'org.byteam.superadapter:superadapter:3.6.5'
-
-//    compile 'com.liulishuo.filedownloader:library:1.4.2'
-
+    //    compile 'com.liulishuo.filedownloader:library:1.4.2'
     compile 'com.jakewharton:butterknife:7.0.0'
     compile 'com.github.bumptech.glide:glide:3.7.0'
-
-    compile'org.greenrobot:greendao:3.0.1'
-    compile'org.greenrobot:greendao-generator:3.0.0'
-
+    compile 'org.greenrobot:greendao:3.0.1'
+    compile 'org.greenrobot:greendao-generator:3.0.0'
     compile 'com.qiniu:qiniu-android-sdk:7.0.7'
-
     //bmob-sdk：Bmob的android sdk包，包含了Bmob的数据存储、文件等服务，以下是最新的bmob-sdk:
     //3.5.0：请务必查看下面注释[1]
     compile 'cn.bmob.android:bmob-sdk:3.5.0'
-
 }

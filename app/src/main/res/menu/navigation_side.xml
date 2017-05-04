@@ -1,28 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android"
-      xmlns:app="http://schemas.android.com/apk/res-auto">
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item android:title="Communicate">
-        <menu>
-            <item
-                android:id="@+id/navigation_home"
-                android:icon="@drawable/ic_home_black_24dp"
-                android:orderInCategory="0"
-                android:title="@string/title_home"/>
-
-            <item
-                android:id="@+id/navigation_discovery"
-                android:icon="@drawable/ic_discovery_black_24dp"
-                android:orderInCategory="1"
-                android:title="@string/title_discovery"/>
-
-            <item
-                android:id="@+id/navigation_my"
-                android:icon="@drawable/ic_my_black_24dp"
-                android:orderInCategory="2"
-                android:title="@string/title_my"/>
-
-        </menu>
-    </item>
-
+    <group
+        android:id="@+id/group_bottom"
+        android:checkableBehavior="all">
+        <item android:title="@string/general">
+            <menu>
+                <item
+                    android:id="@+id/navigation_notification"
+                    android:checkable="true"
+                    android:icon="@drawable/ic_notification_black_24dp"
+                    android:title="@string/title_notification"/>
+                <item
+                    android:id="@+id/navigation_settings"
+                    android:checkable="true"
+                    android:icon="@drawable/ic_settings_black_24dp"
+                    android:title="@string/title_settings"/>
+                <item
+                    android:id="@+id/navigation_about"
+                    android:checkable="true"
+                    android:icon="@drawable/ic_mood_black_24dp"
+                    android:title="@string/title_about"/>
+                <item
+                    android:id="@+id/navigation_share"
+                    android:checkable="true"
+                    android:icon="@drawable/ic_share_black_24dp"
+                    android:title="@string/title_share"/>
+            </menu>
+        </item>
+    </group>
 </menu>

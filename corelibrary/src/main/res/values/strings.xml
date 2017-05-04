@@ -37,7 +37,8 @@
     <string name="nav_me">我的</string>
 
     <string name="details">详情</string>
-    <string name="about">关于我们</string>
+    <string name="about">关于</string>
+    <string name="general">通用</string>
     <string name="feedback">意见反馈</string>
     <string name="download">我的下载</string>
     <string name="service">联系客服</string>

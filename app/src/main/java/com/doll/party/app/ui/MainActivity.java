@@ -105,6 +105,7 @@ public class MainActivity extends BaseAppActivity {
             = new NavigationView.OnNavigationItemSelectedListener() {
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
 //            mDrawerLayout.closeDrawer(GravityCompat.START);
             return true;
         }

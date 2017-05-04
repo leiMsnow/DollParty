@@ -1,16 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:layout_width="match_parent"
-              android:layout_height="144dp"
-              android:divider="@drawable/vertical_divider"
-              android:orientation="vertical"
-              android:showDividers="beginning|middle">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="144dp">
 
-    <TextView
+    <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginBottom="20dp"
-        android:gravity="center"
-        android:text="header"/>
+        android:background="@mipmap/bg_slide"
+        android:scaleType="centerCrop"/>
 
-</LinearLayout>
+    <com.ray.core.widget.CircleImageView
+        android:id="@+id/iv_user_icon"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:src="@mipmap/ic_face_normal"/>
+
+    <TextView
+        android:id="@+id/tv_user_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/iv_user_icon"
+        android:layout_marginBottom="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:gravity="left|center_vertical"
+        android:paddingLeft="8dp"
+        android:text="Ray"
+        android:textSize="18sp"
+        android:textStyle="bold"/>
+
+</RelativeLayout>

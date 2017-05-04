@@ -37,6 +37,7 @@
     </style>
 
     <style name="AppTheme.Main.LightBlue">
+        <item name="android:textViewStyle">@style/Widget.TextView.Style.Dark</item>
         <item name="colorPrimary">@color/theme_light_blue</item>
         <item name="colorPrimaryDark">@color/theme_light_blue</item>
         <item name="colorAccent">@color/theme_light_blue_700</item>
