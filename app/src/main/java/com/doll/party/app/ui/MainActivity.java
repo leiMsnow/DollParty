@@ -1,5 +1,6 @@
 package com.doll.party.app.ui;
 
+import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.FloatingActionButton;
@@ -12,9 +13,14 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.util.SparseArray;
 import android.view.MenuItem;
+import android.view.View;
 
+import com.chenenyu.router.RouteCallback;
+import com.chenenyu.router.RouteResult;
+import com.chenenyu.router.Router;
 import com.doll.party.app.R;
 import com.doll.party.app.base.BaseAppActivity;
+import com.ray.core.uils.LogUtils;
 
 import butterknife.Bind;
 
@@ -45,6 +51,17 @@ public class MainActivity extends BaseAppActivity {
         initDrawerLayout();
         initViewPager();
         mBottomNavigationView.setOnNavigationItemSelectedListener(mOnBottomNavigationItemSelectedListener);
+        fabtnCreate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Router.build("create_doll").callback(new RouteCallback() {
+                    @Override
+                    public void callback(RouteResult state, Uri uri, String message) {
+                        LogUtils.d(this.getClass().getName(),message);
+                    }
+                }).go(mContext);
+            }
+        });
     }
 
     private void initDrawerLayout() {

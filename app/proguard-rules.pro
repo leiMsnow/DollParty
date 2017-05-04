@@ -250,3 +250,13 @@ public static java.lang.String TABLENAME;
 -keep class com.android.internal.http.multipart.**{*;}
 -keep class org.apache.commons.**{*;}
 -keep class org.apache.http.**{*;}
+# Router
+-keep class com.chenenyu.router.** {*;}
+-keep class * implements com.chenenyu.router.RouteInterceptor {*;}
+# takephoto
+-keep class com.jph.takephoto.** { *; }
+-dontwarn com.jph.takephoto.**
+-keep class com.darsh.multipleimageselect.** { *; }
+-dontwarn com.darsh.multipleimageselect.**
+-keep class com.soundcloud.android.crop.** { *; }
+-dontwarn com.soundcloud.android.crop.**
