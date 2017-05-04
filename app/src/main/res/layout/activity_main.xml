@@ -21,10 +21,21 @@
         <android.support.design.widget.BottomNavigationView
             android:id="@+id/navigation"
             android:layout_width="match_parent"
-            android:layout_height="56dp"
+            android:layout_height="48dp"
             android:layout_alignParentBottom="true"
             android:background="?android:attr/windowBackground"
             app:menu="@menu/navigation_main"/>
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fabtn_create"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_above="@+id/navigation"
+            app:srcCompat="@drawable/ic_add_white_24dp"
+            app:fabSize="normal"/>
 
     </RelativeLayout>
 
